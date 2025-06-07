@@ -31,18 +31,18 @@ export default function LogsPage() {
       toast({ title: "Logs limpos com sucesso!" });
     },
     onError: () => {
-      toast({ 
+      toast({
         title: "Erro ao limpar logs",
-        variant: "destructive" 
+        variant: "destructive"
       });
     },
   });
 
   const exportLogs = () => {
     if (!logs || logs.length === 0) {
-      toast({ 
+      toast({
         title: "Nenhum log para exportar",
-        variant: "destructive" 
+        variant: "destructive"
       });
       return;
     }
@@ -123,8 +123,8 @@ export default function LogsPage() {
                 <SelectItem value="error">Erro</SelectItem>
               </SelectContent>
             </Select>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="sm"
               onClick={() => clearLogsMutation.mutate()}
               disabled={clearLogsMutation.isPending}
@@ -132,7 +132,7 @@ export default function LogsPage() {
               <Trash2 className="h-4 w-4 mr-2" />
               Limpar
             </Button>
-            <Button 
+            <Button
               size="sm"
               onClick={exportLogs}
             >
@@ -142,7 +142,7 @@ export default function LogsPage() {
           </div>
         </div>
       </CardHeader>
-      
+
       <CardContent>
         <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm text-green-400 max-h-96 overflow-y-auto">
           {isLoading ? (

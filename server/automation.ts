@@ -62,11 +62,11 @@ export class AutomationService {
       const headlessSetting = settings.find(s => s.key === 'headless');
       const browserTypeSetting = settings.find(s => s.key === 'browserType');
       
-      const headless = headlessSetting?.value as boolean ?? false;
-      const browserType = browserTypeSetting?.value as string ?? 'chrome';
+      const headless = (headlessSetting?.value as boolean) ?? false;
+      const browserType = (browserTypeSetting?.value as string) ?? 'chrome';
 
       this.browser = await puppeteer.launch({
-        headless: true,
+        headless,
         args: [
           '--no-sandbox',
           '--disable-setuid-sandbox',

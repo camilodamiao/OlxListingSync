@@ -55,7 +55,6 @@ npm run dev
 │   └── connectivity-test.ts # Testes de conectividade
 ├── shared/              # Código compartilhado
 │   └── schema.ts        # Esquemas do banco de dados
-└── docs/                # Documentação do projeto
 ```
 
 ## 🔧 Configuração
